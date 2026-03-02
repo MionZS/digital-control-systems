@@ -1,0 +1,15 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Experiment (demo_a)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "control_lab.experiments.run_experiment",
+      "args": ["--config", "experiments/configs/demo_a.yaml"],
+      "cwd": "${workspaceFolder}",
+      "env": {},
+      "justMyCode": true
+    }
+  ]
+}
