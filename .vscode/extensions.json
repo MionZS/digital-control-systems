@@ -2,6 +2,6 @@
   "recommendations": [
     "charliermarsh.ruff",
     "ms-python.python",
-    "ms-toolsai.jupyter"
+    "marimo-team.vscode-marimo"
   ]
 }

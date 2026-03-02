@@ -31,7 +31,11 @@ htmlcov/
 # Type checking
 .mypy_cache/
 
-# Jupyter
+# Marimo
+__marimo__/
+.marimo/
+
+# Jupyter (legacy – kept for history)
 .ipynb_checkpoints/
 *.ipynb_checkpoints
 

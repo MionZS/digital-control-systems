@@ -55,6 +55,24 @@ uv run python -m control_lab.experiments.run_experiment \
 
 Results land in `experiments/results/YYYYMMDD-HHMM__demo_a__seed42/`.
 
+### Open interactive notebooks (Marimo)
+
+```bash
+# Open a single notebook
+uv run marimo edit notebooks/01_python_control_basics.py
+
+# Or open the notebook directory
+uv run marimo edit notebooks/
+```
+
+Notebooks are plain Python files (`.py`) using the [Marimo](https://marimo.io) reactive notebook format — no `.ipynb`, fully version-controllable and diffable.
+
+| File | Description |
+|---|---|
+| `01_python_control_basics.py` | LTI models, step response, Bode plot |
+| `02_sindy_from_sim.py` | SINDy identification from simulation data |
+| `03_closed_loop_compare_backends.py` | PID vs LQR closed-loop comparison |
+
 ### Run the test suite
 
 ```bash
@@ -115,7 +133,7 @@ digital-control-systems/
 │   ├── utils/          logging.py · plotting.py · seeding.py
 │   └── experiments/    run_experiment.py · configs/demo_a.yaml
 ├── tests/
-├── notebooks/          01_python_control_basics · 02_sindy_from_sim · 03_compare
+├── notebooks/          01_python_control_basics.py · 02_sindy_from_sim.py · 03_compare.py
 └── .github/workflows/  ci.yml
 ```
 

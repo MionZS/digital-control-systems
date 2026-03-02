@@ -30,6 +30,15 @@
       "presentation": {
         "reveal": "always"
       }
+    },
+    {
+      "label": "marimo edit notebooks",
+      "type": "shell",
+      "command": "uv run marimo edit notebooks/",
+      "group": "build",
+      "presentation": {
+        "reveal": "always"
+      }
     }
   ]
 }
