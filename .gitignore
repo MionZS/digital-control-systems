@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Type checking
+.mypy_cache/
+
+# Marimo
+__marimo__/
+.marimo/
+
+# Jupyter (legacy – kept for history)
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# IDE
+.idea/
+*.swp
+*.swo
+
+# Data / outputs
+experiments/results/
+*.parquet
+*.csv.gz
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Distribution
+dist/
+*.egg-info/

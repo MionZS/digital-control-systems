@@ -1,0 +1,44 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "pytest",
+      "type": "shell",
+      "command": "uv run pytest",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "ruff check",
+      "type": "shell",
+      "command": "uv run ruff check .",
+      "group": "build",
+      "presentation": {
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "run demo_a",
+      "type": "shell",
+      "command": "uv run python -m control_lab.experiments.run_experiment --config experiments/configs/demo_a.yaml",
+      "group": "build",
+      "presentation": {
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "marimo edit notebooks",
+      "type": "shell",
+      "command": "uv run marimo edit notebooks/",
+      "group": "build",
+      "presentation": {
+        "reveal": "always"
+      }
+    }
+  ]
+}

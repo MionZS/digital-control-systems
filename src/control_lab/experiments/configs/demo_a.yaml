@@ -1,0 +1,25 @@
+# Demo A — mass-spring-damper position control with PID
+name: demo_a
+seed: 42
+
+model:
+  type: mass_spring_damper
+  m: 1.0     # kg
+  k: 1.0     # N/m
+  c: 0.5     # N·s/m
+  dt: null   # continuous-time model
+
+controller:
+  type: pid
+  kp: 20.0
+  ki: 5.0
+  kd: 3.0
+  dt: 0.01
+  u_min: -100.0
+  u_max: 100.0
+
+simulation:
+  t_span: [0.0, 10.0]
+  dt: 0.01
+  x0: [0.0, 0.0]
+  r: 1.0     # step to 1 m
