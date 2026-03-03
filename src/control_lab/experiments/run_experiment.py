@@ -12,7 +12,7 @@ import numpy as np
 import yaml
 
 
-def main(config_path: str) -> None:
+def main(config_path: str, backend_name: str = "control") -> None:
     """Load *config_path*, run the experiment, and save artefacts."""
     with open(config_path) as fh:
         config = yaml.safe_load(fh)
@@ -71,10 +71,24 @@ def main(config_path: str) -> None:
     def r_func(t: float) -> np.ndarray:  # noqa: ARG001
         return np.array([r_val])
 
-    from control_lab.sim.backend_control import ControlBackend
     from control_lab.sim.common import compute_metrics
 
-    backend = ControlBackend()
+    if backend_name == "control":
+        from control_lab.sim.backend_control import ControlBackend
+
+        backend = ControlBackend()
+    elif backend_name == "collimator":
+        try:
+            from control_lab.sim.backend_collimator import CollimatorBackend
+
+            backend = CollimatorBackend()
+        except ImportError as exc:  # pragma: no cover - runtime optional dependency
+            raise ImportError(
+                "Collimator backend requested but optional dependency is missing: "
+                "install with `uv add control-lab[collimator]` or use --backend control"
+            ) from exc
+    else:
+        raise ValueError(f"Unknown backend: {backend_name!r}")
     result = backend.simulate(model, controller, x0, r_func, t_span, dt)
     metrics = compute_metrics(result, r_final=r_val)
 
@@ -114,5 +128,11 @@ def main(config_path: str) -> None:
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run a control-lab experiment.")
     parser.add_argument("--config", required=True, help="Path to YAML config file.")
+    parser.add_argument(
+        "--backend",
+        choices=["control", "collimator"],
+        default="control",
+        help="Which simulation backend to use.",
+    )
     args = parser.parse_args()
-    main(args.config)
+    main(args.config, backend_name=args.backend)

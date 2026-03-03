@@ -8,29 +8,28 @@ Run with:  uv run marimo edit notebooks/01_python_control_basics.py
 
 import marimo
 
-__generated_with = "0.10.0"
+__generated_with = "0.20.2"
 app = marimo.App(width="medium")
 
 
 @app.cell
 def _():
     import marimo as mo
+
     return (mo,)
 
 
 @app.cell
 def _(mo):
-    mo.md(
-        r"""
-        # 01 — python-control basics
+    mo.md(r"""
+    # 01 — python-control basics
 
-        This notebook demonstrates:
-        - Creating an LTI model (mass-spring-damper)
-        - Step response simulation
-        - Bode plot and stability margins
-        - Poles and zeros
-        """
-    )
+    This notebook demonstrates:
+    - Creating an LTI model (mass-spring-damper)
+    - Step response simulation
+    - Bode plot and stability margins
+    - Poles and zeros
+    """)
     return
 
 
@@ -52,11 +51,10 @@ def _():
         LTIModel,
         PIDController,
         compute_metrics,
-        matplotlib,
         np,
-        plt,
         plot_bode,
         plot_step_response,
+        plt,
     )
 
 
@@ -77,10 +75,19 @@ def _(LTIModel, mo):
     | Stable  | {model.is_stable()} |
     | Poles   | {model.poles().round(4).tolist()} |
     """)
+    return
 
 
 @app.cell
-def _(ControlBackend, LTIModel, PIDController, compute_metrics, np, plt, plot_step_response):
+def _(
+    ControlBackend,
+    LTIModel,
+    PIDController,
+    compute_metrics,
+    np,
+    plot_step_response,
+    plt,
+):
     # --- Closed-loop step response with PID ---
     model_sim = LTIModel.mass_spring_damper(m=1.0, k=1.0, c=0.5)
     backend = ControlBackend()
@@ -98,15 +105,17 @@ def _(ControlBackend, LTIModel, PIDController, compute_metrics, np, plt, plot_st
 
     print("Metrics:", {k: round(v, 4) for k, v in metrics.items()})
     fig
+    return
 
 
 @app.cell
-def _(LTIModel, plt, plot_bode):
+def _(LTIModel, plot_bode, plt):
     # --- Bode plot of the open-loop plant ---
     model_bode = LTIModel.mass_spring_damper(m=1.0, k=1.0, c=0.5)
     fig_bode = plot_bode(model_bode, title="Open-loop Bode — Mass-Spring-Damper")
     plt.close("all")
     fig_bode
+    return
 
 
 @app.cell
@@ -130,6 +139,7 @@ def _(LTIModel, mo):
         "| Method | |Ad| eigenvalues |\n|---|---|\n"
         + "\n".join(rows)
     )
+    return
 
 
 if __name__ == "__main__":
