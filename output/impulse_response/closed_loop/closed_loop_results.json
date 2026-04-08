@@ -1,0 +1,38 @@
+{
+  "inputs": {
+    "model_json": "output\\impulse_response\\degrau1_lampada_26032026\\identified_model.json",
+    "disturbance_csv": "output\\impulse_response\\degrau1_lampada_26032026\\degrau1_lampada_26032026.csv",
+    "delta_ref": 5.0
+  },
+  "controller": {
+    "kp": 0.06861808711761586,
+    "ki": 0.0025589473347179415,
+    "kd": 0.0,
+    "saturation": [
+      0.0,
+      1.0
+    ],
+    "anti_windup": "freeze integrator when saturated in same error direction"
+  },
+  "model": {
+    "name": "first_order",
+    "order": 1,
+    "delay_samples": 0,
+    "gz_num": [
+      0.0,
+      0.5334716110982982
+    ],
+    "gz_den": [
+      1.0,
+      -0.9633941985148821
+    ]
+  },
+  "metrics": {
+    "rmse_tracking": 0.946920404978845,
+    "mae_tracking": 0.35460031412707194,
+    "max_abs_tracking_error": 5.0,
+    "u_mean_percent": 34.45072049617035,
+    "u_max_percent": 36.86799089352587,
+    "u_sat_100_percent_ratio": 0.0
+  }
+}

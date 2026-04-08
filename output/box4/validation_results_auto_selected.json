@@ -1,0 +1,43 @@
+{
+  "validation_input": {
+    "control_file": "input\\ValidacaoBox4\\controle.lvm",
+    "output_file": "input\\ValidacaoBox4\\saida.lvm",
+    "time_scale_to_seconds": 0.1,
+    "sample_time_s": 0.10000000000000142,
+    "n_samples": 984
+  },
+  "model_source": "output\\box4\\identified_model.json",
+  "model_used": {
+    "name": "second_order_underdamped",
+    "family": "underdamped",
+    "order": 2,
+    "discrete_z_domain": {
+      "numerator": [
+        0.0,
+        0.0016083901989587535,
+        0.0015782273316758966
+      ],
+      "denominator": [
+        1.0,
+        -1.934454808614382,
+        0.944805907296215
+      ]
+    },
+    "applied_delay_samples": 5
+  },
+  "metrics": {
+    "rmse": 1.6575872079475573,
+    "mae": 1.302044002891482,
+    "nrmse": 0.22095930456302043,
+    "fit_percent": -11.360537095201039,
+    "max_abs_error": 4.712380058440565
+  },
+  "signal_stats": {
+    "u_min": -6.0,
+    "u_max": 9.0,
+    "y_meas_min": -3.010078,
+    "y_meas_max": 4.491698,
+    "y_model_min": -3.1021263080135695,
+    "y_model_max": 4.456927273499865
+  }
+}

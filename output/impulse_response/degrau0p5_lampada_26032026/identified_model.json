@@ -1,0 +1,56 @@
+{
+  "input": {
+    "control_file": "C:\\Users\\mahmi\\dev\\controle-digital\\output\\impulse_response\\degrau0p5_lampada_26032026\\control.lvm",
+    "output_file": "C:\\Users\\mahmi\\dev\\controle-digital\\output\\impulse_response\\degrau0p5_lampada_26032026\\output.lvm",
+    "time_scale_to_seconds": 1.0,
+    "sample_time_s": 1.0,
+    "detected_steps": 1,
+    "valid_regions": 1
+  },
+  "selection": {
+    "apparent_family": "third_or_higher_like",
+    "reason": "best_score",
+    "decision_notes": [
+      "Apparent family: third_or_higher_like",
+      "Selected first_order as the best-scoring candidate."
+    ]
+  },
+  "model": {
+    "name": "first_order",
+    "family": "monotonic",
+    "order": 1,
+    "parameters": {
+      "K": 19.999999999762878,
+      "tau": 29.275301861529314,
+      "delay": 5.043167844449548e-13
+    },
+    "fit": {
+      "rmse": 0.4302457959667208,
+      "bic": -123.4472281787661,
+      "aic": -130.6305756427834
+    },
+    "continuous_s_domain": {
+      "numerator": [
+        19.999999999762878
+      ],
+      "denominator": [
+        29.275301861529314,
+        1.0
+      ],
+      "transfer_function": "(20) / (29.2753s + 1)"
+    },
+    "discrete_z_domain": {
+      "method": "zoh",
+      "numerator": [
+        0.0,
+        0.671633432908685
+      ],
+      "denominator": [
+        1.0,
+        -0.9664183283541676
+      ],
+      "transfer_function": "(0z + 0.671633) / (1z + -0.966418)"
+    },
+    "notes": []
+  }
+}
