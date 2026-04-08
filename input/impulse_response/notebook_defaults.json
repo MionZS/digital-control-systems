@@ -1,0 +1,6 @@
+{
+  "input_csv": "C:\\Users\\mahmi\\dev\\controle-digital\\input\\impulse_response\\degrau1_lampada_26032026.txt",
+  "dt": null,
+  "max_taps": 300,
+  "output_model_json": "C:\\Users\\mahmi\\dev\\controle-digital\\input\\impulse_response\\identified_model.json"
+}

@@ -14,6 +14,8 @@ Notebooks are plain `.py` files — version-controllable, diffable, and linted b
 | `01_python_control_basics.py` | LTI models, step response, Bode plot, discretisation comparison |
 | `02_sindy_from_sim.py` | Simulate MSD with LQR, then identify dynamics with SINDy |
 | `03_closed_loop_compare_backends.py` | PID vs LQR closed-loop comparison with metrics table |
+| `04_impulse_response_analysis.py` | Identify second-order parameters (K, zeta, omega_n, delay) from response data |
+| `05_zoh_two_file_identification.py` | Read separate control/output files and identify G(z) and G(s) under ZOH |
 
 ## Running notebooks
 

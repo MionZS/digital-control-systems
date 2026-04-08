@@ -1,0 +1,5 @@
+{
+    "control_file": "input/degrausMotorTQ/controle.lvm",
+    "output_file": "input/degrausMotorTQ/saida.lvm",
+    "output_model_json": "input/impulse_response/zoh_identified_model.json"
+}

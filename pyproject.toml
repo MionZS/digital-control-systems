@@ -28,7 +28,7 @@ dev = [
     "pytest>=8.0",
     "ruff>=0.4",
     "mypy>=1.10",
-    "marimo>=0.10",
+    "marimo==0.22.5",
 ]
 
 [tool.hatch.build.targets.wheel]
