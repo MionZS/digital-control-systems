@@ -1,0 +1,56 @@
+{
+  "input": {
+    "control_file": "input\\degrausMotorTQ\\controle.lvm",
+    "output_file": "input\\degrausMotorTQ\\saida.lvm",
+    "time_scale_to_seconds": 0.1,
+    "sample_time_s": 0.10000000000000142,
+    "detected_steps": 3,
+    "valid_regions": 3
+  },
+  "selection": {
+    "apparent_family": "third_or_higher_like",
+    "reason": "best_score",
+    "decision_notes": [
+      "Apparent family: third_or_higher_like",
+      "Selected first_order as the best-scoring candidate."
+    ]
+  },
+  "model": {
+    "name": "first_order",
+    "family": "monotonic",
+    "order": 1,
+    "parameters": {
+      "K": 1.0364222582185185,
+      "tau": 1.0845639879924067,
+      "delay": 2.2442722596951527e-21
+    },
+    "fit": {
+      "rmse": 0.035352660110571164,
+      "bic": -4098.544438133291,
+      "aic": -4111.8141790238915
+    },
+    "continuous_s_domain": {
+      "numerator": [
+        1.0364222582185185
+      ],
+      "denominator": [
+        1.0845639879924067,
+        1.0
+      ],
+      "transfer_function": "(1.03642) / (1.08456s + 1)"
+    },
+    "discrete_z_domain": {
+      "method": "zoh",
+      "numerator": [
+        0.0,
+        0.0912880145898124
+      ],
+      "denominator": [
+        1.0,
+        -0.9119200558788412
+      ],
+      "transfer_function": "(0z + 0.091288) / (1z + -0.91192)"
+    },
+    "notes": []
+  }
+}

@@ -140,11 +140,10 @@ def launch(
             raise typer.Exit(1)
 
     # Get the backend script
-    backend_script = None
-    for bname, bscript in BACKENDS:
-        if bname == backend:
-            backend_script = bscript
-            break
+    backend_script = next((bscript for bname, bscript in BACKENDS if bname == backend), None)
+    if backend_script is None:
+        typer.echo(f"❌ Could not resolve backend script for: {backend}")
+        raise typer.Exit(1)
 
     # Open the notebook (marimo)
     project_path = NOTEBOOKS_DIR / project

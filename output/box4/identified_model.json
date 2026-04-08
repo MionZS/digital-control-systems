@@ -1,0 +1,60 @@
+{
+  "input": {
+    "control_file": "input\\EstimacaoBox4\\controle.lvm",
+    "output_file": "input\\EstimacaoBox4\\saida.lvm",
+    "time_scale_to_seconds": 0.1,
+    "sample_time_s": 0.10000000000000142,
+    "detected_steps": 15,
+    "valid_regions": 10
+  },
+  "selection": {
+    "apparent_family": "third_or_higher_like",
+    "reason": "best_score",
+    "decision_notes": [
+      "Apparent family: third_or_higher_like",
+      "Selected second_order_underdamped as the best-scoring candidate."
+    ]
+  },
+  "model": {
+    "name": "second_order_underdamped",
+    "family": "underdamped",
+    "order": 2,
+    "parameters": {
+      "K": 0.30785307227601766,
+      "zeta": 0.2749867124295237,
+      "omega_n": 1.0323364570335283,
+      "delay": 0.5365092989555436
+    },
+    "fit": {
+      "rmse": 0.23833677384433466,
+      "bic": -2136.0768792676745,
+      "aic": -2154.5784487397063
+    },
+    "continuous_s_domain": {
+      "numerator": [
+        0.3280847330378226
+      ],
+      "denominator": [
+        1.0,
+        0.5677576168815844,
+        1.0657185605205377
+      ],
+      "transfer_function": "(0.328085) / (1s^2 + 0.567758s + 1.06572)"
+    },
+    "discrete_z_domain": {
+      "method": "zoh",
+      "numerator": [
+        0.0,
+        0.0016083901989587535,
+        0.0015782273316758966
+      ],
+      "denominator": [
+        1.0,
+        -1.934454808614382,
+        0.944805907296215
+      ],
+      "transfer_function": "(0z^2 + 0.00160839z + 0.00157823) / (1z^2 + -1.93445z + 0.944806)"
+    },
+    "notes": []
+  }
+}
